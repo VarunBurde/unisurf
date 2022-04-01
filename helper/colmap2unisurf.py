@@ -128,17 +128,17 @@ if __name__ == "__main__":
 
 	print(f"camera:\n\tres={w,h}\n\tcenter={cx,cy}\n\tfocal={fl_x,fl_y}\n\tfov={fovx,fovy}\n\tk={k1,k2} p={p1,p2} ")
 
-	intrinsic = np.eye(4, dtype=np.float32)
-	intrinsic[0, 0] = fl_x
-	intrinsic[1, 1] = fl_y
-	intrinsic[0, 2] = cx
-	intrinsic[1, 2] = cy
+	intrinsic4 = np.eye(4, dtype=np.float64)
+	intrinsic4[0, 0] = fl_x
+	intrinsic4[1, 1] = fl_y
+	intrinsic4[0, 2] = cx
+	intrinsic4[1, 2] = cy
 
-	intrinsic2 = np.eye(3, dtype=np.float32)
-	intrinsic2[0, 0] = fl_x
-	intrinsic2[1, 1] = fl_y
-	intrinsic2[0, 2] = cx
-	intrinsic2[1, 2] = cy
+	intrinsic3 = np.eye(3, dtype=np.float64)
+	intrinsic3[0, 0] = fl_x
+	intrinsic3[1, 1] = fl_y
+	intrinsic3[0, 2] = cx
+	intrinsic3[1, 2] = cy
 
 	with open(os.path.join(TEXT_FOLDER,"images.txt"), "r") as f:
 		i=0
@@ -224,17 +224,18 @@ if __name__ == "__main__":
 
 	print("avg camera distance from origin ", avglen)
 
-	# ####### Normalization using location center
-	# normalization = np.eye(4).astype(np.float32)
-	#
-	# normalization[0, 3] = totp[0]
-	# normalization[1, 3] = totp[1]
-	# normalization[2, 3] = totp[2]
-	#
-	# normalization[0, 0] = avglen
-	# normalization[1, 1] = avglen
-	# normalization[2, 2] = avglen
-	# print(normalization)
+	####### Normalization using location center
+	normalizationc = np.eye(4).astype(np.float32)
+
+	normalizationc[0, 3] = totp[0]
+	normalizationc[1, 3] = totp[1]
+	normalizationc[2, 3] = totp[2]
+
+	normalizationc[0, 0] = avglen
+	normalizationc[1, 1] = avglen
+	normalizationc[2, 2] = avglen
+	print("normalization matrix using idr is")
+	print(normalizationc)
 
 	##### Normalization using 3d points
 	points = []
@@ -250,25 +251,24 @@ if __name__ == "__main__":
 			points.append(point)
 	points = np.array(points)
 	points = np.c_[points, np.ones(points.shape[0])]
-	# print("points are")
-	# print(points)
-	#
-	# centroid = np.array(points).mean(axis=0)
-	# mean_norm=np.linalg.norm(np.array(points)-centroid,axis=1).mean()
-	# scale = np.array(points).std()
-	# print("centroid", centroid)
-	# print("scale", scale)
-	#
-	# normalization = np.eye(4).astype(np.float32)
-	#
-	# normalization[0, 3] = centroid[0]
-	# normalization[1, 3] = centroid[1]
-	# normalization[2, 3] = centroid[2]
-	#
-	# normalization[0, 0] = scale
-	# normalization[1, 1] = scale
-	# normalization[2, 2] = scale
 
+	centroid = np.array(points).mean(axis=0)
+	mean_norm=np.linalg.norm(np.array(points)-centroid,axis=1).mean()
+	scale = np.array(points).std()
+	print("centroid", centroid)
+	print("scale", scale)
+
+	normalizationp = np.eye(4).astype(np.float32)
+
+	normalizationp[0, 3] = centroid[0]
+	normalizationp[1, 3] = centroid[1]
+	normalizationp[2, 3] = centroid[2]
+
+	normalizationp[0, 0] = scale
+	normalizationp[1, 1] = scale
+	normalizationp[2, 2] = scale
+	print("normalization with points")
+	print(normalizationp)
 
 	i =0
 	for f in out["frames"]:
@@ -278,35 +278,22 @@ if __name__ == "__main__":
 		f["transform_matrix"][0:3,3]*=4./avglen
 		transform_mat = f["transform_matrix"]
 		wm = np.eye(4)
-		wm[:3, :3] = intrinsic @ transform_mat[:3, :3]
-		wm[:3, 3] = intrinsic @ transform_mat[:3, 3]
+		wm[:3, :3] = intrinsic3 @ transform_mat[:3, :3]
+		wm[:3, 3] = intrinsic3 @ transform_mat[:3, 3]
 		cameras["world_mat_%d" % i] = wm
 		cameras["camera_mat_%d" % i] = np.eye(4)
-
-		# """" normalization using idr"""
 		# cameras['scale_mat_%d' % i] = normalization
+
+
+		# normalization using idr
+		# cameras['scale_mat_%d' % i] = normalizationc
 		# cameras["world_mat_%d" % i] = transform_mat
-		# cameras["camera_mat_%d" % i] = K
+		# cameras["camera_mat_%d" % i] = intrinsic4
 
-		# cameras["world_mat_%d" % i] = f["transform_matrix"]
-		# cameras["camera_mat_%d" % i] = K
-
-		# f["transform_matrix"][0:3,3]*=4./avglen     # scale to "nerf sized"
-
-
-		# print("points are")
-		# print(transform_mat @ points[0].T )
-		# print(points[0].T)
-
-		# cameras['scale_mat_%d' % i] = normalization
-		cameras["world_mat_%d" % i] = transform_mat
-		cameras["camera_mat_%d" % i] = intrinsic
-
-		# cameras["world_mat_%d" % i] = np.eye(4)
-		# cameras["camera_mat_%d" % i] = transform_mat
-
-		# cameras["world_mat_%d" % i] = f["transform_matrix"]
-		# cameras["camera_mat_%d" % i] = K
+		# normalization using averagelen
+		# cameras['scale_mat_%d' % i] = normalizationc
+		# cameras["world_mat_%d" % i] = transform_mat
+		# cameras["camera_mat_%d" % i] = intrinsic4
 
 		mat_path = os.path.join(OUT_PATH,'unisurf_data')
 		img_dir = os.path.join(mat_path, "image")
@@ -318,12 +305,6 @@ if __name__ == "__main__":
 		np.savez(os.path.join(mat_path, 'cameras.npz'), **cameras)
 		print("saving", '{0:06}.png'.format(i))
 		i = i +1
-	# for f in out["frames"]:
-	# 	f["transform_matrix"]=f["transform_matrix"].tolist()
-	# print(nframes,"frames")
-	# OUT_PATH = os.path.join(OUT_PATH,'unisurf_data', 'tranform.json')
-	# print(f"writing {OUT_PATH}")
-	# with open(OUT_PATH, "w") as outfile:
-	# 	json.dump(out, outfile, indent=2)
+
 
 
