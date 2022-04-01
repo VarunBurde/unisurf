@@ -128,18 +128,6 @@ if __name__ == "__main__":
 
 	print(f"camera:\n\tres={w,h}\n\tcenter={cx,cy}\n\tfocal={fl_x,fl_y}\n\tfov={fovx,fovy}\n\tk={k1,k2} p={p1,p2} ")
 
-	intrinsic4 = np.eye(4, dtype=np.float64)
-	intrinsic4[0, 0] = fl_x
-	intrinsic4[1, 1] = fl_y
-	intrinsic4[0, 2] = cx
-	intrinsic4[1, 2] = cy
-
-	intrinsic3 = np.eye(3, dtype=np.float64)
-	intrinsic3[0, 0] = fl_x
-	intrinsic3[1, 1] = fl_y
-	intrinsic3[0, 2] = cx
-	intrinsic3[1, 2] = cy
-
 	with open(os.path.join(TEXT_FOLDER,"images.txt"), "r") as f:
 		i=0
 		bottom = np.array([0,0,0,1.]).reshape([1,4])
@@ -220,8 +208,6 @@ if __name__ == "__main__":
 	for f in out["frames"]:
 		avglen+=np.linalg.norm(f["transform_matrix"][0:3,3])
 	avglen/=nframes
-	cameras = {}
-
 	print("avg camera distance from origin ", avglen)
 
 	####### Normalization using location center
@@ -250,8 +236,6 @@ if __name__ == "__main__":
 			point = [X,Y,Z]
 			points.append(point)
 	points = np.array(points)
-	points = np.c_[points, np.ones(points.shape[0])]
-
 	centroid = np.array(points).mean(axis=0)
 	mean_norm=np.linalg.norm(np.array(points)-centroid,axis=1).mean()
 	scale = np.array(points).std()
@@ -270,28 +254,32 @@ if __name__ == "__main__":
 	print("normalization with points")
 	print(normalizationp)
 
+	intrinsic = np.eye(4, dtype=np.float64)
+	intrinsic[0, 0] = fl_x
+	intrinsic[1, 1] = fl_y
+	intrinsic[0, 2] = cx
+	intrinsic[1, 2] = cy
+	print("intrinsics")
+	print(intrinsic)
+
+	cameras = {}
 	i =0
 	for f in out["frames"]:
-
-		############# using idr
 		# scale to "nerf sized"
-		f["transform_matrix"][0:3,3]*=4./avglen
+		f["transform_matrix"][0:3,3]*=4/avglen
 		transform_mat = f["transform_matrix"]
-		wm = np.eye(4)
-		wm[:3, :3] = intrinsic3 @ transform_mat[:3, :3]
-		wm[:3, 3] = intrinsic3 @ transform_mat[:3, 3]
-		cameras["world_mat_%d" % i] = wm
+
+		cameras["world_mat_%d" % i] = transform_mat
 		cameras["camera_mat_%d" % i] = np.eye(4)
 		# cameras['scale_mat_%d' % i] = normalization
-
 
 		# normalization using idr
 		# cameras['scale_mat_%d' % i] = normalizationc
 		# cameras["world_mat_%d" % i] = transform_mat
 		# cameras["camera_mat_%d" % i] = intrinsic4
 
-		# normalization using averagelen
-		# cameras['scale_mat_%d' % i] = normalizationc
+		# normalization using points
+		# cameras['scale_mat_%d' % i] = normalizationp
 		# cameras["world_mat_%d" % i] = transform_mat
 		# cameras["camera_mat_%d" % i] = intrinsic4
 
