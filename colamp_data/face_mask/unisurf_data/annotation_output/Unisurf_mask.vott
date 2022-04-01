@@ -1,0 +1,633 @@
+{
+    "name": "Unisurf_mask",
+    "securityToken": "Unisurf_mask Token",
+    "sourceConnection": {
+        "name": "images",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYTlmOGVkM2M3NmU3OGI0MWYxNjdkOTZkNTRiYmQ4N2VhMzNkN2IwYTU0YjA4MDEwNGQ2NTQyNGU1OTU4ZTA5OTZmZWUyYTgyODY4MzZjNzQ3MTQzNzU5MGE2MzZlNWNkYjllMzRhZjMyOGIwNzQwYTEzMGE0NjdiODQzY2FmN2ViZWI5NGExNjFhZDQzOTA2YmMwNDYyMzZhYmYyNmUzMzViMzcwZDliZWY3YTgyNDc0ZDMxYzkwZGRiYmRjYTM4IiwiaXYiOiI2MmRjMDk1Y2M0ZjVkYjA5OTgxMDg3ZWVjMmQ2MjUyMDk0MTMxZmQ0Yjk5NThiOTUifQ=="
+        },
+        "id": "BIXvOt73i"
+    },
+    "targetConnection": {
+        "name": "output",
+        "providerType": "localFileSystemProxy",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiYjZmM2UyMzUxYzM5MjUzMWM3ZTlkNTA4MDRiYTFhZDBmZGUyYTY3YTgwNjkxMTdjNzEzZTUyOGM1ODMxZGE5OWQ1YTk1YzM1MjczNjc5YTg3NWZlZWM4YTQ4MWZmYzkyM2RlYzFjY2FkZWIwNDk4YzI2Yjk3MjZmMjA5M2M4MjJkNjk4MmVkMjBkNzVlZGI2MmI5ZjQwOWIwNjcxNjRhZTAyYmNjODc4MTVhYTU2MTdlOGI0YTljNGZlMzlkZmU1OGJjOTdlOWFkNGNiNDg1YzczNWM1M2ZlM2I5YmI4MDIiLCJpdiI6IjVkNDgxMmU4M2I4NjczZjc5ODNiY2MxMmE2NWIyY2Y3YTdhOGFhMTNiNzFiMjA2YiJ9"
+        },
+        "id": "-Bbr_kwQ_"
+    },
+    "videoSettings": {
+        "frameExtractionRate": 15
+    },
+    "tags": [
+        {
+            "name": "mask",
+            "color": "#5db300"
+        }
+    ],
+    "id": "z3YnOyYzu",
+    "activeLearningSettings": {
+        "autoDetect": false,
+        "predictTag": true,
+        "modelPathType": "coco"
+    },
+    "exportFormat": {
+        "providerType": "vottJson",
+        "providerOptions": {
+            "encrypted": "eyJjaXBoZXJ0ZXh0IjoiMDFjMDY4MDI3ZWM3ZjBkOWY4NDYxMmVjN2RiZGI4MjZlOTRlNjBhNjQ5NGFlYmQ1ZjFhNjgwNjViYTQwZDUxMTg1NWRjMWMzNTBkM2JjNjkxODg3MDU4YTRkZmU2NTM2IiwiaXYiOiIzMWFmODJiZjQ5MTQ2ZTE1NDNlNDk4ZDljODA1NGQ5ODYzOThkZmU4MmI1M2IzNzQifQ=="
+        }
+    },
+    "version": "2.2.0",
+    "lastVisitedAssetId": "639193d9f3b78486706ecc8ff8e00df8",
+    "assets": {
+        "c7243e8d65f5fd0c84fd19285b302bdb": {
+            "format": "png",
+            "id": "c7243e8d65f5fd0c84fd19285b302bdb",
+            "name": "000000.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000000.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "503a5797477e04e84bdf4c57e5242856": {
+            "format": "png",
+            "id": "503a5797477e04e84bdf4c57e5242856",
+            "name": "000001.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000001.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c6367574d4bed670367acfd68fc3253d": {
+            "format": "png",
+            "id": "c6367574d4bed670367acfd68fc3253d",
+            "name": "000002.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000002.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "0f188d39921136737d106b9571bc3c4f": {
+            "format": "png",
+            "id": "0f188d39921136737d106b9571bc3c4f",
+            "name": "000003.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000003.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "da66eae15299e3b76c8dc1a73d358289": {
+            "format": "png",
+            "id": "da66eae15299e3b76c8dc1a73d358289",
+            "name": "000004.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000004.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "819ec73dc4cb37009dc3da12a6fdbcda": {
+            "format": "png",
+            "id": "819ec73dc4cb37009dc3da12a6fdbcda",
+            "name": "000005.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000005.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b407062e38e95595522222eb2c2db0ce": {
+            "format": "png",
+            "id": "b407062e38e95595522222eb2c2db0ce",
+            "name": "000006.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000006.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "631d123f2105dcbb75ad11a438173a8f": {
+            "format": "png",
+            "id": "631d123f2105dcbb75ad11a438173a8f",
+            "name": "000007.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000007.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "67b48f6b78086cad2aaffd98e4d9736e": {
+            "format": "png",
+            "id": "67b48f6b78086cad2aaffd98e4d9736e",
+            "name": "000008.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000008.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "944dad584bdd9c2d04bf1f17b5a39ce0": {
+            "format": "png",
+            "id": "944dad584bdd9c2d04bf1f17b5a39ce0",
+            "name": "000009.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000009.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ece20868ed5c427a34d124dee6adfdbd": {
+            "format": "png",
+            "id": "ece20868ed5c427a34d124dee6adfdbd",
+            "name": "000010.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000010.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "b3899630cc4d67f2ed70bb3181cdbea9": {
+            "format": "png",
+            "id": "b3899630cc4d67f2ed70bb3181cdbea9",
+            "name": "000011.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000011.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "62167f25b17d68beaa729e77465342be": {
+            "format": "png",
+            "id": "62167f25b17d68beaa729e77465342be",
+            "name": "000012.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000012.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "748c8d4ea409d6f7ae5633bc781edab0": {
+            "format": "png",
+            "id": "748c8d4ea409d6f7ae5633bc781edab0",
+            "name": "000013.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000013.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "f28494f328d490b05fb282cb5673240a": {
+            "format": "png",
+            "id": "f28494f328d490b05fb282cb5673240a",
+            "name": "000014.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000014.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "dd9d7d3f2e0edad13323059809d9c717": {
+            "format": "png",
+            "id": "dd9d7d3f2e0edad13323059809d9c717",
+            "name": "000015.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000015.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c63f1497cce95f77c453aecdd5326786": {
+            "format": "png",
+            "id": "c63f1497cce95f77c453aecdd5326786",
+            "name": "000016.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000016.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3a4c4dc109eabea69e4710444911bb49": {
+            "format": "png",
+            "id": "3a4c4dc109eabea69e4710444911bb49",
+            "name": "000017.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000017.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "3cb580aa7251564e2538bf60d3af0d22": {
+            "format": "png",
+            "id": "3cb580aa7251564e2538bf60d3af0d22",
+            "name": "000018.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000018.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "975fb53b8204a9b8749883426c20d920": {
+            "format": "png",
+            "id": "975fb53b8204a9b8749883426c20d920",
+            "name": "000019.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000019.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "9833772476e833d39f660103bd155e57": {
+            "format": "png",
+            "id": "9833772476e833d39f660103bd155e57",
+            "name": "000020.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000020.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "104774d6c9f63a2b5fa65c0ed7145efa": {
+            "format": "png",
+            "id": "104774d6c9f63a2b5fa65c0ed7145efa",
+            "name": "000021.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000021.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "8692ef9e74dadecd0fec4856de972d53": {
+            "format": "png",
+            "id": "8692ef9e74dadecd0fec4856de972d53",
+            "name": "000022.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000022.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "aac5ba979a2197cea9654c6b096dff2b": {
+            "format": "png",
+            "id": "aac5ba979a2197cea9654c6b096dff2b",
+            "name": "000023.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000023.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c89dbf8b96438b97725a0cbc2b4d1612": {
+            "format": "png",
+            "id": "c89dbf8b96438b97725a0cbc2b4d1612",
+            "name": "000024.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000024.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e21257a2c59213bffb73e2133b7d840c": {
+            "format": "png",
+            "id": "e21257a2c59213bffb73e2133b7d840c",
+            "name": "000025.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000025.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ba78452f50d465fcdb145c8d5320b22d": {
+            "format": "png",
+            "id": "ba78452f50d465fcdb145c8d5320b22d",
+            "name": "000026.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000026.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "e8aaa006dac6393aa172b153e0e9282a": {
+            "format": "png",
+            "id": "e8aaa006dac6393aa172b153e0e9282a",
+            "name": "000027.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000027.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "d126aeb89b10c47e9f4e48475687b88c": {
+            "format": "png",
+            "id": "d126aeb89b10c47e9f4e48475687b88c",
+            "name": "000028.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000028.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "948d7b296ef6c3287563c3a633557eb6": {
+            "format": "png",
+            "id": "948d7b296ef6c3287563c3a633557eb6",
+            "name": "000029.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000029.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "aaeee70b9d6677a8c9c4c8a28683ac75": {
+            "format": "png",
+            "id": "aaeee70b9d6677a8c9c4c8a28683ac75",
+            "name": "000030.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000030.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "95e7ce1609ea7a196e37f2b9f2acf626": {
+            "format": "png",
+            "id": "95e7ce1609ea7a196e37f2b9f2acf626",
+            "name": "000031.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000031.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c1439db05735663a0154d9e68d021632": {
+            "format": "png",
+            "id": "c1439db05735663a0154d9e68d021632",
+            "name": "000032.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000032.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "994ff316b4ca4e461db2fa5991c3c0ec": {
+            "format": "png",
+            "id": "994ff316b4ca4e461db2fa5991c3c0ec",
+            "name": "000033.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000033.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "38cae5c79eb97b359267945e6b7918c2": {
+            "format": "png",
+            "id": "38cae5c79eb97b359267945e6b7918c2",
+            "name": "000034.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000034.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "c896d00b3976e2592ce2284102b97a35": {
+            "format": "png",
+            "id": "c896d00b3976e2592ce2284102b97a35",
+            "name": "000035.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000035.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "67736240325de514fa4b5abbf51a9761": {
+            "format": "png",
+            "id": "67736240325de514fa4b5abbf51a9761",
+            "name": "000036.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000036.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ebd7545edc8df9718c28e3e8a1a33cc4": {
+            "format": "png",
+            "id": "ebd7545edc8df9718c28e3e8a1a33cc4",
+            "name": "000037.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000037.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "feb42949f5430a1026908676c25b1265": {
+            "format": "png",
+            "id": "feb42949f5430a1026908676c25b1265",
+            "name": "000038.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000038.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "24042addea295e65281466660f8f8d8e": {
+            "format": "png",
+            "id": "24042addea295e65281466660f8f8d8e",
+            "name": "000039.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000039.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "37778d5d124aaf8368de0bd91af3180b": {
+            "format": "png",
+            "id": "37778d5d124aaf8368de0bd91af3180b",
+            "name": "000040.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000040.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "7a24288c361749e3ffbe59e579fb6665": {
+            "format": "png",
+            "id": "7a24288c361749e3ffbe59e579fb6665",
+            "name": "000041.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000041.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "ffcfe4fda3b5c22d29a67d2390f3c4ae": {
+            "format": "png",
+            "id": "ffcfe4fda3b5c22d29a67d2390f3c4ae",
+            "name": "000042.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000042.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "bdecf6fcf317da90be166bf677b3cd93": {
+            "format": "png",
+            "id": "bdecf6fcf317da90be166bf677b3cd93",
+            "name": "000043.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000043.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "4cec38c402a6eba37789d9f948325f71": {
+            "format": "png",
+            "id": "4cec38c402a6eba37789d9f948325f71",
+            "name": "000044.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000044.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "516a5c0b8b210d28335695041a310322": {
+            "format": "png",
+            "id": "516a5c0b8b210d28335695041a310322",
+            "name": "000045.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000045.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "324ad66758772e0bae72236245d440bc": {
+            "format": "png",
+            "id": "324ad66758772e0bae72236245d440bc",
+            "name": "000046.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000046.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "cdf50bf9511629e80783a09f57c371ed": {
+            "format": "png",
+            "id": "cdf50bf9511629e80783a09f57c371ed",
+            "name": "000047.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/000047.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        },
+        "639193d9f3b78486706ecc8ff8e00df8": {
+            "format": "png",
+            "id": "639193d9f3b78486706ecc8ff8e00df8",
+            "name": "img_0000.png",
+            "path": "file:/home/varun/PycharmProjects/unisurf/colamp_data/face_mask/unisurf_data/image/img_0000.png",
+            "size": {
+                "width": 3072,
+                "height": 4080
+            },
+            "state": 2,
+            "type": 1
+        }
+    }
+}
