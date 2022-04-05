@@ -49,4 +49,4 @@ training:
   lambda_l1_rgb: 1.0
   lambda_normals: 0.005
   lambda_occ_prob: 0.0
-  vis_resolution: [300, 400]
+  vis_resolution: [510, 384]

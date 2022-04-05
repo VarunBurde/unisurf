@@ -13,6 +13,7 @@ def parse_args():
 	parser = argparse.ArgumentParser(description="convert a text colmap export to nerf format transforms.json; optionally convert video to images, and optionally run colmap in the first place")
 
 	parser.add_argument("--images", default="images", help="input path to the images")
+	parser.add_argument("--output", default="output", help='path to output')
 
 	args = parser.parse_args()
 	return args
@@ -80,7 +81,7 @@ if __name__ == "__main__":
 	args = parse_args()
 	IMAGE_FOLDER=args.images
 	TEXT_FOLDER= os.path.dirname(IMAGE_FOLDER)
-	OUT_PATH=os.path.dirname(IMAGE_FOLDER)
+	OUT_PATH=args.output
 	print(f"outputting to {OUT_PATH}...")
 	with open(os.path.join(TEXT_FOLDER,"cameras.txt"), "r") as f:
 		angle_x=math.pi/2
@@ -266,7 +267,13 @@ if __name__ == "__main__":
 	i =0
 	for f in out["frames"]:
 		# scale to "nerf sized"
-		f["transform_matrix"][0:3,3]*=4/avglen
+		# print(f["transform_matrix"])
+		# print(f["transform_matrix"][0:2,3])
+		# print(f["transform_matrix"][2, 3])
+		f["transform_matrix"][0, 3]*= 1.0/avglen
+		f["transform_matrix"][1, 3] *= 1.0/ avglen
+		f["transform_matrix"][2, 3] *= 4.0/ avglen
+
 		transform_mat = f["transform_matrix"]
 
 		cameras["world_mat_%d" % i] = transform_mat
@@ -277,13 +284,13 @@ if __name__ == "__main__":
 		# cameras['scale_mat_%d' % i] = normalizationc
 		# cameras["world_mat_%d" % i] = transform_mat
 		# cameras["camera_mat_%d" % i] = intrinsic4
-
+		#
 		# normalization using points
 		# cameras['scale_mat_%d' % i] = normalizationp
 		# cameras["world_mat_%d" % i] = transform_mat
 		# cameras["camera_mat_%d" % i] = intrinsic4
 
-		mat_path = os.path.join(OUT_PATH,'unisurf_data')
+		mat_path = OUT_PATH
 		img_dir = os.path.join(mat_path, "image")
 		if not os.path.exists(img_dir):
 			os.mkdir(os.path.join(mat_path, "image"))

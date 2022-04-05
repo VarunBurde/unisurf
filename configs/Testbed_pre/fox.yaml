@@ -51,4 +51,4 @@ training:
   lambda_occ_prob: 0.0
   vis_resolution: [300, 400]
 extraction:
-  model_file: /home/varun/PycharmProjects/unisurf/out/Testbed/fox/model_0.pt
+  model_file: /home/varun/PycharmProjects/unisurf/out/Testbed/fox/model_130000.pt
