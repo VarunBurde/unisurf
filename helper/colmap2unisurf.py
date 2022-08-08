@@ -185,6 +185,16 @@ if __name__ == "__main__":
 	R=np.pad(R,[0,1])
 	R[-1,-1]=1
 
+	print( " this is focal and h", fl_x , w)
+
+	intrinsic = np.eye(4, dtype=np.float64)
+	intrinsic[0, 0] = fl_x /w * 2
+	intrinsic[1, 1] = fl_y /h * 2
+	intrinsic[0, 2] = -1
+	intrinsic[1, 2] = -1
+	print("intrinsics")
+	print(intrinsic)
+
 	for f in out["frames"]:
 		f["transform_matrix"]=np.matmul(R,f["transform_matrix"]) # rotate up to be the z axis
 
@@ -211,7 +221,7 @@ if __name__ == "__main__":
 	avglen/=nframes
 	print("avg camera distance from origin ", avglen)
 
-	####### Normalization using location center
+	###### Normalization using location center
 	normalizationc = np.eye(4).astype(np.float32)
 
 	normalizationc[0, 3] = totp[0]
@@ -255,13 +265,7 @@ if __name__ == "__main__":
 	print("normalization with points")
 	print(normalizationp)
 
-	intrinsic = np.eye(4, dtype=np.float64)
-	intrinsic[0, 0] = fl_x
-	intrinsic[1, 1] = fl_y
-	intrinsic[0, 2] = cx
-	intrinsic[1, 2] = cy
-	print("intrinsics")
-	print(intrinsic)
+
 
 	cameras = {}
 	i =0
@@ -270,9 +274,11 @@ if __name__ == "__main__":
 		# print(f["transform_matrix"])
 		# print(f["transform_matrix"][0:2,3])
 		# print(f["transform_matrix"][2, 3])
-		f["transform_matrix"][0, 3]*= 1.0/avglen
-		f["transform_matrix"][1, 3] *= 1.0/ avglen
-		f["transform_matrix"][2, 3] *= 4.0/ avglen
+		f["transform_matrix"][0, 3] *= 0.0/avglen
+		f["transform_matrix"][1, 3] *= 0.0/ avglen
+		f["transform_matrix"][2, 3] *= 1.8/ avglen
+
+		# f["transform_matrix"][0:3,3] *= 4.0 / avglen # scale to "nerf sized"
 
 		transform_mat = f["transform_matrix"]
 

@@ -459,9 +459,9 @@ class ImagesField(object):
         camera_file = os.path.join(model_path, 'cameras.npz')
         camera_dict = np.load(camera_file)
         Rt = camera_dict['world_mat_%s' % idx].astype(np.float32)
-        K = camera_dict['camera_mat_%s' % idx].astype(np.float32)
-        S = camera_dict.get('scale_mat_%s' % idx, np.eye(4)).astype(np.float32)
-        # S = camera_dict['scale_mat_%s' % idx].astype(np.float32)
+        # K = camera_dict['camera_mat_%s' % idx].astype(np.float32)
+        K = camera_dict.get('camera_mat_%s' % idx, np.eye(4)).astype(np.float32)
+        S = camera_dict['scale_mat_%s' % idx].astype(np.float32)
         
         data['world_mat'] = Rt
         data['camera_mat'] = K

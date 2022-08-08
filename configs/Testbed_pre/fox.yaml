@@ -13,7 +13,7 @@ rendering:
   type: unisurf
   n_max_network_queries: 64000
   white_background: False
-  radius: 4.0
+  radius: 5.9
   interval_start: 2.0 
   interval_end: 0.1
   interval_decay: 0.000015
@@ -51,4 +51,4 @@ training:
   lambda_occ_prob: 0.0
   vis_resolution: [300, 400]
 extraction:
-  model_file: /home/varun/PycharmProjects/unisurf/out/Testbed/fox/model_130000.pt
+  model_file: /home/varun/PycharmProjects/unisurf/out/Testbed/fox/model.pt
