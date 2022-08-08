@@ -11,7 +11,6 @@ from torchvision import transforms
 from multiprocessing import Manager
 
 logger = logging.getLogger(__name__)
-
 ## Adapted from DVR
 
 def get_dataloader(cfg, mode='train', spilt_model_for_images=True, 
